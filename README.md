@@ -1,5 +1,5 @@
 # yaman_pdi1
-Repositório para versionar o meu primeiro PDI na Yaman <br><br><br>
+Repositório para versionar o meu primeiro PDI na Yaman 
 
 # Objetivo
 1. Fornecer ambiente de laboratório para estudos de testes não funcionais que estimulem a implantação de infraestrutura através de containers, execução de testes em ambiente controlado com total autonomia sobre todos os componentes do ecossistema envolvido. <br>
@@ -8,6 +8,7 @@ Repositório para versionar o meu primeiro PDI na Yaman <br><br><br>
 # Requisitos
 1. Docker e Docker compose instalados e configurados. (em ambiente Windows, Docker desktop é suficiente pois já traz o Docker compose nativamente).
 2. Navegador.
+3. Jmeter.
 
 # Como executar
 1. Clonar o projeto do github: git clone https://github.com/devrcapelini/yaman_pdi1.git
@@ -31,26 +32,37 @@ Repositório para versionar o meu primeiro PDI na Yaman <br><br><br>
 
 2. Acessando o endereço http://127.0.0.1/health
 
-<br>
-<br>  
 
 # Métricas disponíveis
 ### O Micrometer disponibiliza algumas métricas da JVM por padrão que são muito úteis em uma análise de performance.
+- As métricas disponíveis podem ser consultadas aqui: http://127.0.0.1/metrics
 
 ## Métricas da JVM
-- descrever aqui
+- Irei descrever as métricas da JVM em atualizações deste documento, por agora, é possível ter uma visão sobre as métricas expostas aqui:
+- https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
 
 
 ## Métricas Personalizadas
-### As métricas personalizadas são geradas através de implementação, utilizando as classes do micrometer na aplicação, as que utilizamos até o momento neste projeto são:
+### As métricas personalizadas são geradas através de implementação, utilizando as classes do micrometer na aplicação, futuramente incluirei uma explicação sobre a implementação, mas por agora é suficiente saber que as métricas que criamos até o momento neste projeto são:
 - auth_user_success_total
 - auth_user_error_total
 
 
 
 # Consultando o Prometheus
+- para consultar a tela do Prometheus, basta acessar o endereço local http://127.0.0.1:9090
+- A documentação sobre consultas no Prometheus pode ser lida aqui: https://prometheus.io/docs/prometheus/latest/querying/basics/
+- No campo de consulta, podemos utilizar para a análise as métricas disponíveis em http://127.0.0.1/metrics
+- A linguagem de consulta utilizada no prometheus é a PromQL que pode ser consultada na documentação.
+  
 
 # Rodando um robô simples e verificando as métricas
+- criar um robô para gerar as métricas e explicar o funcionamento
 
 # To-do list
-
+- Enriquecer esta documentação com mais explicações e aplicabilidades
+- Incluir o Grafana na stack
+- Incluir o AlertManager
+- Criar a automação com Jmeter + Selenium para demonstar uma utilização específica do Jmeter
+- Implementar endpoints de inclusão de dados
+- Implementar endpoints de consultas mais onerosos para visualizar o consumo de recursos computacionais através da observabilidade
