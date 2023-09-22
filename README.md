@@ -57,7 +57,14 @@ Repositório para versionar o meu primeiro PDI na Yaman
   
 
 # Rodando um robô simples e verificando as métricas
-- criar um robô para gerar as métricas e explicar o funcionamento
+- Ao acessar a tela de consulta do prometheus, como exemplo, consulte as métricas:
+   - auth_user_success_total
+   - auth_user_error_total
+   
+- Rodar o robô auth.jmx incluso na pasta do projeto através do comando:
+   - jmeter -n -t auth.jmx
+
+- Será possível observar o aumento de ambas as ocorrências devido a forma como o robô foi contruído
 
 # To-do list
 - Enriquecer esta documentação com mais explicações e aplicabilidades
